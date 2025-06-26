@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - Infra
-    paths-ignore:
-      - 'README.md'
 
 jobs:
   deploy:
