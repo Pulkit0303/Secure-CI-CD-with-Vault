@@ -1,0 +1,40 @@
+name: SetUp-EC2-Vault
+on:
+  push:
+    branches:
+      - Infra
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📦Checkout code
+      uses: actions/checkout@v4
+
+    - name: ⚙️Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: 🔨Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.7.5  
+
+    - name: ✅Terraform Init
+      run: terraform init
+      working-directory: .
+
+    - name: ✅Terraform Validate
+      run: terraform validate
+      working-directory: .
+
+    - name: 📋Terraform Plan
+      run: terraform plan
+      working-directory: .
+
+    - name: 🚀Terraform Apply (auto-approve)
+      run: terraform apply -auto-approve
+      working-directory: .
