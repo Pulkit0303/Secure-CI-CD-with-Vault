@@ -2,7 +2,7 @@ name: SetUp-EC2-Vault
 on:
   push:
     branches:
-      - main
+      - Infra
 jobs:
   deploy:
     runs-on: ubuntu-latest
