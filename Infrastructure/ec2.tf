@@ -1,5 +1,4 @@
 resource "aws_security_group" "my_sg" {
-  name        = "jenkins-vault-sg"
   description = "Allow Jenkins, Vault, and SSH ports"
 
   ingress {
