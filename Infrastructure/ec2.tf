@@ -32,10 +32,6 @@ resource "aws_security_group" "my_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags = {
-    Name = "jenkins-vault-sg"
-  }
 }
 
 resource "aws_instance" "ec2_inst" {
