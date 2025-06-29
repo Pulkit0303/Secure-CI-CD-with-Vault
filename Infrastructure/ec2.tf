@@ -1,3 +1,4 @@
+//Security Groups
 resource "aws_security_group" "my_sg" {
   description = "Allow Jenkins, Vault, and SSH ports"
 
@@ -32,7 +33,7 @@ resource "aws_security_group" "my_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
+//EC2 Instance
 resource "aws_instance" "ec2_inst" {
   ami           = var.my_ami
   instance_type = var.my_type
