@@ -29,7 +29,6 @@ Traditionally, secrets like API keys, AWS access keys, and tokens are hardcoded 
 | Branch             | Purpose                                              |
 |--------------------|------------------------------------------------------|
 | `Infra`            | Automates Vault installation and configuration on EC2 |
-| `s3-upload-pipeline` | Implements Jenkins pipeline for secure S3 upload     |
 
 ---
 
