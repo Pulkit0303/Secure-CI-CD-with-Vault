@@ -39,7 +39,6 @@ resource "aws_instance" "ec2_inst" {
   instance_type = var.my_type
   user_data     = file("${path.module}/jenkins-install.sh")
   vpc_security_group_ids = [aws_security_group.my_sg.id]
-
   tags = {
     Name = var.my_name
   }
