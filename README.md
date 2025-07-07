@@ -1,6 +1,6 @@
 # 🔐 Vault-Integrated CI/CD Pipeline with Jenkins
 
-This project demonstrates how to securely manage secrets in a CI/CD pipeline by integrating **HashiCorp Vault** with **Jenkins**. Instead of hardcoding AWS credentials in pipeline scripts, this setup uses Vault to fetch secrets dynamically and uploads files to an AWS S3 bucket.
+This project demonstrates how to securely manage secrets in a CI/CD pipeline by integrating **HashiCorp Vault** with **Jenkins**. Instead of hardcoding AWS credentials in pipeline scripts, this setup uses Vault to fetch secrets dynamically.
 
 ---
 
@@ -19,8 +19,6 @@ Traditionally, secrets like API keys, AWS access keys, and tokens are hardcoded 
 
 - Understand the purpose and working of Vault in real-world DevOps workflows.
 - Eliminate hardcoded secrets from Jenkins pipeline scripts.
-- Use Vault’s AppRole authentication to retrieve AWS credentials.
-- Upload files to an S3 bucket securely using credentials fetched from Vault.
 
 ---
 
@@ -47,7 +45,6 @@ Traditionally, secrets like API keys, AWS access keys, and tokens are hardcoded 
 - **Jenkins**
 - **HashiCorp Vault** (AppRole auth)
 - **AWS EC2** (for hosting Vault & Jenkins)
-- **AWS S3** (file storage)
 - **AWS IAM** (Roles)
 - **Terraform** (optional, for infra automation)
 - **Shell Scripting**
@@ -57,5 +54,3 @@ Traditionally, secrets like API keys, AWS access keys, and tokens are hardcoded 
 ## 🚧 Current Status
 
 - Vault is being installed and configured on EC2 with UI enabled.
-- Jenkins will use Vault AppRole auth to fetch AWS credentials.
-- Files will be uploaded securely to S3 as part of the pipeline.
